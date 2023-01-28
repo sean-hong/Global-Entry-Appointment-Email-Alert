@@ -10,12 +10,18 @@ def main():
     load_dotenv()
 
     # get the email address and password for authentication
-    email = getenv("EMAIL")
-    password = getenv("PASSWORD")
+    env_email = getenv("EMAIL")
+    env_password = getenv("PASSWORD")
+
+    # set the email parameters
+    subject = ""
+    recipient = ""
+    receiver = ""
+    message = ""
 
     # create the email message and send it
     email_msg = create_email_message("", "", "", "")
-    send_email(email, password, email_msg)
+    send_email(env_email, env_password, email_msg)
 
 # execute main method
 if __name__ == "__main__":
