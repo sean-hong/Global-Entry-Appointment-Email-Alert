@@ -17,10 +17,10 @@ def call_api(location: int) -> dict:
     try:
         req = get(api_url)
         req_json = req.json()
-
-        return req_json.pop() if req_json else None
     except Exception as e:
         print(e)
+
+    return req_json.pop() if req_json else None
 
 def read_api_data(location: int, data: dict) -> str:
     start_time = datetime.strptime(data["startTimestamp"], "%Y-%m-%dT%H:%M")
