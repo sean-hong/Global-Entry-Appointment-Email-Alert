@@ -2,7 +2,7 @@ from email.message import EmailMessage
 from smtplib import SMTP_SSL
 
 # create the email message
-def create_email_message(recipient: str, receiver: str, subject: str, message: str) -> EmailMessage:
+def create_email_message(subject: str, recipient: str, receiver: str, message: str) -> EmailMessage:
     email_msg = EmailMessage()
 
     email_msg["Subject"] = subject
@@ -14,7 +14,7 @@ def create_email_message(recipient: str, receiver: str, subject: str, message: s
     return email_msg
 
 # send the email
-def send_email(email_msg: str) -> None:
+def send_email(email_msg: EmailMessage) -> None:
     protocol = SMTP_SSL("smtp.gmail.com", 465)
 
     try:
