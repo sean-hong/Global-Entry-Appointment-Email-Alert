@@ -26,4 +26,4 @@ def call_api(location: int) -> dict:
 def read_api_data(location: int, data: dict) -> str:
     start_time = datetime.strptime(data["startTimestamp"], "%Y-%m-%dT%H:%M")
 
-    return f"Appointment available at {get_airport(location)} on {start_time.strftime('%m/%d/%Y')} @ {start_time.strftime('%I:%M %p')}"
+    return f"Appointment available at {get_airport(location)} on {start_time.strftime('%m/%d/%Y @ %I:%M %p')}"
