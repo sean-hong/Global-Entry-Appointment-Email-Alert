@@ -22,6 +22,7 @@ def call_api(location: int) -> dict:
 
     return req_json.pop() if req_json else None
 
+# parse the API
 def read_api_data(location: int, data: dict) -> str:
     start_time = datetime.strptime(data["startTimestamp"], "%Y-%m-%dT%H:%M")
     end_time = datetime.strptime(data["endTimestamp"], "%Y-%m-%dT%H:%M")
