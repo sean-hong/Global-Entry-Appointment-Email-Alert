@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Optional
 from requests import get
 
 # map the location to an airport
@@ -8,10 +9,10 @@ def get_airport(location: int) -> str:
         5445: "PHL"
     }
 
-    return airports.get(location)
+    return airports.get(location, "ERROR")
 
 # call the API
-def call_api(location: int) -> dict | None:
+def call_api(location: int) -> Optional(dict):
     api_url = f"https://ttp.cbp.dhs.gov/schedulerapi/slots?orderBy=soonest&limit=1&locationId={location}&minimum=1"
 
     try:
