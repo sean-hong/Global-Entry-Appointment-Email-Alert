@@ -12,7 +12,7 @@ def get_airport(location: int) -> str:
     return airports.get(location, "ERROR")
 
 # call the API
-def call_api(location: int) -> Optional(dict):
+def call_api(location: int) -> Optional[dict]:
     api_url = f"https://ttp.cbp.dhs.gov/schedulerapi/slots?orderBy=soonest&limit=1&locationId={location}&minimum=1"
 
     try:
